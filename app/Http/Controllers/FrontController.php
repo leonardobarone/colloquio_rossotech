@@ -42,19 +42,28 @@ class FrontController extends Controller
             $tls = $data['response'];
             array_push($tlsArray, $tls);
         }
-        dd($tlsArray);
+        dump($tlsArray);
 
      
 
-        return view('code', compact('category'));
+        return view('code', compact('category', 'tlsArray'));
     }
-    public function show()
+    public function show($code)
     {
+        // totale tl
         $response = Http::withToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N0YWdlLnR1c2NhbnlsZWF0aGVyLml0L2FwaS92MS9yZWZyZXNoLXRva2VuIiwiaWF0IjoxNjM3OTkzMjY0LCJleHAiOjE5NTMzNTMyNjQsIm5iZiI6MTYzNzk5MzI2NCwianRpIjoiNmVTZkdWakdkYU10eGl6RCIsInN1YiI6MjAwNDgwLCJwcnYiOiIwZTY1ZmVjYWM0NTI5M2Q4ZmRmYzViMzBmMTA4ZDQwNWYwYTVjZGI2In0.ymezOpO2KATXDjLEJ4bub17ifEUT9fFeRhLsaDcL7KY')
-        ->get('https://stage.tuscanyleather.it/api/v1/product-info/?code=TL141727');
+        ->get("https://stage.tuscanyleather.it/api/v1/product-info/?code={$code}");
         $data = $response->json();
         $item = $response['response'];
+        $firstItem = $item['items'][0];
         dump($item);
+
+        // primo sku
+        $risposta = Http::withToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N0YWdlLnR1c2NhbnlsZWF0aGVyLml0L2FwaS92MS9yZWZyZXNoLXRva2VuIiwiaWF0IjoxNjM3OTkzMjY0LCJleHAiOjE5NTMzNTMyNjQsIm5iZiI6MTYzNzk5MzI2NCwianRpIjoiNmVTZkdWakdkYU10eGl6RCIsInN1YiI6MjAwNDgwLCJwcnYiOiIwZTY1ZmVjYWM0NTI5M2Q4ZmRmYzViMzBmMTA4ZDQwNWYwYTVjZGI2In0.ymezOpO2KATXDjLEJ4bub17ifEUT9fFeRhLsaDcL7KY')
+        ->get($firstItem['details_endpoint']);
+        $data = $risposta->json();
+        $risp = $data['response'];
+        dd($risp);
         return view('show', compact('item'));
     }
 }

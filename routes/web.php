@@ -19,7 +19,7 @@ Route::get('/', 'FrontController@index');
 Route::get('/categories', 'FrontController@categories');
 Route::get('/categories/{id}', 'FrontController@code')->name('code');
 
-Route::get('/product-info', 'FrontController@show');
+Route::get('/product-info/{code}', 'FrontController@show')->name('show');
 
 
 // Route::get('/leo', 'LeoController@index');
