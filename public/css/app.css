@@ -411,7 +411,12 @@ header {
 }
 
 #categories {
-  padding: 72px 0px;
+  padding: 50px 0px;
+}
+
+#categories h1 {
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 #categories .category_card {

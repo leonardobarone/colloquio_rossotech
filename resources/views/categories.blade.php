@@ -3,6 +3,9 @@
 @section('content')
     <div id="categories" class="container">
         <div class="row">
+            <div class="col-12">
+                <h1>Le nostre Categorie</h1>
+            </div>
             @foreach ($categories as $category)
                 <div class="col-12 col-md-3">
                     <div class="category_card">

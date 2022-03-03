@@ -84,7 +84,11 @@ header {
 }
 
 #categories {
-    padding: 72px 0px;
+    padding: 50px 0px;
+    h1 {
+        text-align: center;
+        margin-bottom: 16px;
+    }
     .category_card {
         box-shadow: 0px 2px 4px gray;
         border-radius: 4px;
