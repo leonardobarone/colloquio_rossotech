@@ -18,8 +18,10 @@
             </div>
         </header>
         
-        @yield('content')
-        
+     <main>
+         @yield('content')
+     </main>
+            
         <footer>
             <div id="footer-top">
                 <div class="container">

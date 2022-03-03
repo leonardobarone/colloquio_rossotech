@@ -1,6 +1,8 @@
 @extends('layouts.front')
 
 @section('content')
-    {{$risp['name']}}
-    {{$risp['color']}}
+    <div class="container">
+        {{$risp['name']}}
+        {{$risp['color']}}
+    </div>
 @endsection

@@ -361,13 +361,13 @@ header {
 }
 
 #hero .container .row .btn-white {
-  background-color: white;
+  background-color: lightgray;
   display: inline-block;
   color: black;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  font-weight: bold;
+  transition: all 0.5s;
 }
 
 #footer-top {
@@ -408,5 +408,34 @@ header {
 
 #footer-bottom ul li {
   display: inline;
+}
+
+#categories {
+  padding: 72px 0px;
+}
+
+#categories .category_card {
+  box-shadow: 0px 2px 4px gray;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin: 8px;
+  padding: 6px;
+}
+
+#categories .category_card h3 {
+  font-size: 14px;
+  width: 70%;
+}
+
+#categories .category_card .btn {
+  width: 30%;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #0275d8;
 }
 
