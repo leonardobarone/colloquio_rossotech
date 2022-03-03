@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index');
 
-Route::get('/categories', 'FrontController@categories');
+Route::get('/categories', 'FrontController@categories')->name('categories');
 Route::get('/categories/{id}', 'FrontController@code')->name('code');
 
 Route::get('/product-info/{code}', 'FrontController@show')->name('show');
