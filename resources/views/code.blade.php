@@ -3,6 +3,10 @@
 @section('content')
 <div class="container">
     <ul>
+        <h1> {{ $category['name'] }}</h1>  
+        @if (empty($tlsArray))
+            <p>Questa categoria non contiene nessun prodotto!!</p>         
+        @endif
         @foreach ($tlsArray as $key => $item)
         <li>
            <a href="{{ route('show', $item['code'])}}">
@@ -11,6 +15,5 @@
         </li>
         @endforeach
     </ul>
-        {{ $category['name'] }}
 </div>
 @endsection
