@@ -42,7 +42,7 @@ class FrontController extends Controller
             $tls = $data['response'];
             array_push($tlsArray, $tls);
         }
-        dump($tlsArray);
+        // dump($tlsArray);
 
      
 
@@ -50,21 +50,24 @@ class FrontController extends Controller
     }
     public function show($code)
     {
-        // totale tl
+
         $response = Http::withToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N0YWdlLnR1c2NhbnlsZWF0aGVyLml0L2FwaS92MS9yZWZyZXNoLXRva2VuIiwiaWF0IjoxNjM3OTkzMjY0LCJleHAiOjE5NTMzNTMyNjQsIm5iZiI6MTYzNzk5MzI2NCwianRpIjoiNmVTZkdWakdkYU10eGl6RCIsInN1YiI6MjAwNDgwLCJwcnYiOiIwZTY1ZmVjYWM0NTI5M2Q4ZmRmYzViMzBmMTA4ZDQwNWYwYTVjZGI2In0.ymezOpO2KATXDjLEJ4bub17ifEUT9fFeRhLsaDcL7KY')
         ->get("https://stage.tuscanyleather.it/api/v1/product-info/?code={$code}");
         $data = $response->json();
         $item = $response['response'];
+
+        
+        // totale tl
         $firstItem = $item['items'][0];
-        dump($item);
+        // dump($item);
 
         // primo sku
         $risposta = Http::withToken('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3N0YWdlLnR1c2NhbnlsZWF0aGVyLml0L2FwaS92MS9yZWZyZXNoLXRva2VuIiwiaWF0IjoxNjM3OTkzMjY0LCJleHAiOjE5NTMzNTMyNjQsIm5iZiI6MTYzNzk5MzI2NCwianRpIjoiNmVTZkdWakdkYU10eGl6RCIsInN1YiI6MjAwNDgwLCJwcnYiOiIwZTY1ZmVjYWM0NTI5M2Q4ZmRmYzViMzBmMTA4ZDQwNWYwYTVjZGI2In0.ymezOpO2KATXDjLEJ4bub17ifEUT9fFeRhLsaDcL7KY')
         ->get($firstItem['details_endpoint']);
         $data = $risposta->json();
         $risp = $data['response'];
-        dd($risp);
-        return view('show', compact('item'));
+        // dump($risp);
+        return view('show', compact('item', 'risp'));
     }
 }
 
