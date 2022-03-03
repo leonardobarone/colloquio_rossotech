@@ -350,6 +350,10 @@ header {
   height: 100%;
 }
 
+#hero .container .row .col-12 {
+  padding: 8px;
+}
+
 #hero .container .row h1,
 #hero .container .row p {
   text-shadow: 2px 2px 2px black;
