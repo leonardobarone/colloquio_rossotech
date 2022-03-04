@@ -11,7 +11,12 @@
                     @foreach ($item['features'] as $key => $it)
                         {{-- @if(count($it) > 1)
                         @endif --}}
-                        <h6><strong>{{$key}}:</strong><em>{{}}</em></h6>
+                        <h3><strong>{{$key}}:</strong></h3>
+                        <ul>
+                            @foreach ($it as $i)
+                            <li>{{$i}}</li>
+                            @endforeach
+                        </ul>
                         
                     @endforeach
             </div>

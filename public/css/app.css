@@ -497,3 +497,7 @@ header {
   text-transform: uppercase;
 }
 
+#show li {
+  list-style: none;
+}
+
