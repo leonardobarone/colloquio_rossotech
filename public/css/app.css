@@ -477,11 +477,10 @@ header {
 }
 
 #show .col-12 {
-  border: 1px solid green;
   padding: 8px;
 }
 
-#show img {
+#top-left img {
   border: 1px solid black;
   display: block;
   width: 100%;
@@ -491,13 +490,27 @@ header {
      object-position: center;
 }
 
-#show h1 {
+#top-right {
   text-align: center;
+}
+
+#top-right h1 {
+  margin-bottom: 10px;
   font-size: 16px;
   text-transform: uppercase;
 }
 
-#show li {
+#bottom-right h3 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#bottom-right li {
   list-style: none;
+  font-size: 12px;
+}
+
+#bottom-right li:last-child {
+  margin-bottom: 8px;
 }
 

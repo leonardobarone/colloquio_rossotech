@@ -81,8 +81,8 @@ class FrontController extends Controller
         $risp = $data['response'];
         // dump($risp);
 
-        dump($item);
-        dump($risp);
+        // dump($item);
+        // dump($risp);
         return view('show', compact('item', 'risp'));
     }
 }
