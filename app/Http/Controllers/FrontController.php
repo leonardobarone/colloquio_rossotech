@@ -80,6 +80,9 @@ class FrontController extends Controller
         $data = $risposta->json();
         $risp = $data['response'];
         // dump($risp);
+
+        dump($item);
+        dump($risp);
         return view('show', compact('item', 'risp'));
     }
 }
