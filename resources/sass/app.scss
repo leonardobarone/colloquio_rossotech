@@ -112,3 +112,26 @@ header {
         }
     }
 }
+
+#code {
+    padding: 50px 0px;
+    h1 {
+        margin-bottom: 15px;
+        margin-left: 5px;
+    }
+    .col-md-4 {
+        padding: 5px;
+        a {
+            display: inline-block;
+            padding: 10px;
+            width: 100%;
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+            transition: all 1s;
+            &:hover {
+                background-color: lightblue;
+            }
+        }
+    }
+}

@@ -444,3 +444,30 @@ header {
   background-color: #0275d8;
 }
 
+#code {
+  padding: 50px 0px;
+}
+
+#code h1 {
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+
+#code .col-md-4 {
+  padding: 5px;
+}
+
+#code .col-md-4 a {
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  transition: all 1s;
+}
+
+#code .col-md-4 a:hover {
+  background-color: lightblue;
+}
+

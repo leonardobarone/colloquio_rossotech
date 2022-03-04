@@ -1,19 +1,25 @@
 @extends('layouts.front')
 
 @section('content')
-<div class="container">
-    <ul>
-        <h1> {{ $category['name'] }}</h1>  
+<div id="code" class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1> {{ $category['name'] }}</h1>  
+        </div>
         @if (empty($tlsArray))
-            <p>Questa categoria non contiene nessun prodotto!!</p>         
+            <div class="col-12">
+                <p>Questa categoria non contiene nessun prodotto!!</p> 
+            </div>        
+        @else
+                @foreach ($tlsArray as $key => $item)
+                    <div class="col-12 col-md-4">
+                        <a href="{{ route('show', $item['code'])}}">
+                            {{$item['giftwrap_type']}} N° {{$key + 1}}
+                            
+                        </a> 
+                    </div>
+                @endforeach   
         @endif
-        @foreach ($tlsArray as $key => $item)
-        <li>
-           <a href="{{ route('show', $item['code'])}}">
-            {{$item['giftwrap_type']}} {{$item['code']}}
-           </a> 
-        </li>
-        @endforeach
-    </ul>
+    </div>
 </div>
 @endsection

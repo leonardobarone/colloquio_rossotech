@@ -34,9 +34,7 @@ class FrontController extends Controller
             }
         }
         
-
-
-
+        
         $tlsArray = [];
         
         if (array_key_exists('products', $category )) {
@@ -54,10 +52,6 @@ class FrontController extends Controller
             } else {
                 $tlsArray = [];
             }
-        
-        
-         
-
 
         
        
